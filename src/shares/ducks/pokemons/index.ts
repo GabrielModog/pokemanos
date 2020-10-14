@@ -26,6 +26,22 @@ const reducer: Reducer<PokemonsState> = (state = INITIAL_STATE, action) => {
         error: true,
         data: [],
       };
+    case PokemonsType.SEARCH_REQUEST:
+      return { ...state, loading: true };
+    case PokemonsType.SEARCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        data: [action.payload.data],
+      };
+    case PokemonsType.SEARCH_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: true,
+        data: [],
+      };
     default:
       return state;
   }

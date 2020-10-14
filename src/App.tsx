@@ -3,21 +3,19 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import routes from './routes';
 
-const App = () => {
-  return (
-    <Router>
-      <Switch>
-        {routes.map((route: any) => (
-          <Route
-            path={route.path}
-            exact={route.exact}
-            component={route.component}
-            key={route.path + 3}
-          />
-        ))}
-      </Switch>
-    </Router>
-  );
-};
+const App = () => (
+  <Router>
+    <Switch>
+      {routes.map((route: any) => (
+        <Route
+          path={route.path}
+          exact={route.exact}
+          component={route.component}
+          key={route.path + 3}
+        />
+      ))}
+    </Switch>
+  </Router>
+);
 
 export default App;

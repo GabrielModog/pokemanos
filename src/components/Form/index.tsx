@@ -3,8 +3,10 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Icons from '../../assets';
 import usePokeTypes from '../../hooks/usePokeTypes';
-import { searchByType } from '../../shares/ducks/pokemons/sagas';
-import { changeLayout } from '../../shares/ducks/pokemons/actions';
+import {
+  changeLayout,
+  searchTypeRequest,
+} from '../../shares/ducks/pokemons/actions';
 
 import {
   Button,
@@ -44,11 +46,9 @@ const Form = () => {
 
   const onChangeType = (event: any) => {
     const { value } = event.target;
-
     if (value !== '') {
-      dispatch(searchByType(value));
+      dispatch(searchTypeRequest(value));
     }
-
     setSearchInput({ ...searchInput, type: value });
   };
 

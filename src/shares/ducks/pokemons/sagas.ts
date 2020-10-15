@@ -33,7 +33,12 @@ export function* searchByType(payload: any) {
   try {
     const { typeSearch } = payload.payload;
     const response = yield call(api.get, `type/${typeSearch}`);
-    yield put(searchByTypeSuccess(response.data));
+    const cleanData = response.data.pokemon.map((item: any) => ({
+      name: item.pokemon.name,
+      url: item.pokemon.url,
+      slot: item.pokemon.slot,
+    }));
+    yield put(searchByTypeSuccess(cleanData));
   } catch (err) {
     yield put(searchByTypeFailure());
   }

@@ -22,8 +22,8 @@ export const searchFailure = () => action(PokemonsType.SEARCH_FAILURE);
 export const searchTypeRequest = (typeSearch: string) =>
   action(PokemonsType.SEARCH_TYPE_REQUEST, { typeSearch });
 
-export const searchByTypeSuccess = (data: any) =>
-  action(PokemonsType.SEARCH_TYPE_SUCCESS, { data });
+export const searchByTypeSuccess = (typeData: any) =>
+  action(PokemonsType.SEARCH_TYPE_SUCCESS, { data: { results: typeData } });
 
 export const searchByTypeFailure = () =>
   action(PokemonsType.SEARCH_TYPE_FAILURE);

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { loadRequest } from '../../shares/ducks/pokemons/actions';
 
@@ -20,7 +21,9 @@ const Home = () => {
 
   return (
     <Container>
-      <Title>POKEMANOS</Title>
+      <Link to="/">
+        <Title>POKEMANOS</Title>
+      </Link>
       <Form />
       <PokemonsList data={pokemons.data.results} viewMode={layout} />
       <Pagination />

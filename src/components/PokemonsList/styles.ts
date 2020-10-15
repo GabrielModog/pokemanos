@@ -27,6 +27,7 @@ export const List = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 350ms;
 `;
 
 export const Item = styled.div`
@@ -41,6 +42,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 350ms;
   &:hover {
     opacity: 0.8;
   }

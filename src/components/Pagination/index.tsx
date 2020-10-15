@@ -29,8 +29,6 @@ const Pagination: React.FC<any> = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pagination]);
 
-  console.log(pokemon);
-
   return (
     <Container>
       {pagination !== 0 && (

@@ -6,7 +6,7 @@ import { loadRequest } from '../../shares/ducks/pokemons/actions';
 
 import PokemonsList from '../../components/PokemonsList';
 import Form from '../../components/Form';
-import { Container, Title } from './styles';
+import { Container, Title, Loading } from './styles';
 import Pagination from '../../components/Pagination';
 
 const Home = () => {
@@ -25,6 +25,8 @@ const Home = () => {
         <Title>POKEMANOS</Title>
       </Link>
       <Form />
+      {pokemons.loading && <Loading />}
+      {pokemons.error && <Loading />}
       <PokemonsList data={pokemons.data.results} viewMode={layout} />
       <Pagination />
     </Container>

@@ -36,7 +36,7 @@ export const Row = styled.div`
 export const TypesCard = styled.div`
   background-color: ${Warning[200]};
   width: 400px;
-  padding: 2rem;
+  padding: 1rem 2rem;
   color: white;
   border-radius: 10px;
   margin: 2rem 0;

@@ -22,6 +22,7 @@ export const List = styled.div`
   background: #ffffff;
   border-radius: 10px;
   margin: 5px 0;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,8 +35,13 @@ export const Item = styled.div`
   background: #ffffff;
   border-radius: 10px;
   margin: 5px;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 `;

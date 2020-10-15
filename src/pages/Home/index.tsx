@@ -11,6 +11,7 @@ import Pagination from '../../components/Pagination';
 const Home = () => {
   const dispatch = useDispatch();
   const pokemons: any = useSelector((state: any) => state.pokemons);
+  const layout: any = useSelector((state: any) => state.pokemons.layout);
 
   useEffect(() => {
     dispatch(loadRequest());
@@ -21,7 +22,7 @@ const Home = () => {
     <Container>
       <Title>POKEMANOS</Title>
       <Form />
-      <PokemonsList data={pokemons.data.results} viewMode="GRID" />
+      <PokemonsList data={pokemons.data.results} viewMode={layout} />
       <Pagination />
     </Container>
   );

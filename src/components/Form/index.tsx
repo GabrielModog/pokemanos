@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Icons from '../../assets';
 import usePokeTypes from '../../hooks/usePokeTypes';
+import { searchByType } from '../../shares/ducks/pokemons/sagas';
+import { changeLayout } from '../../shares/ducks/pokemons/actions';
 
 import {
   Button,
@@ -18,6 +21,7 @@ const Form = () => {
   const [searchInput, setSearchInput] = useState<any>({ search: '' });
 
   const history = useHistory();
+  const dispatch = useDispatch();
   const typesOption = usePokeTypes();
 
   const onChangeInput = (event: any) => {
@@ -31,6 +35,27 @@ const Form = () => {
     history.push(`/pokemon/${searchInput.search}`);
   };
 
+  const changeToGrid = () => {
+    dispatch(changeLayout('GRID'));
+  };
+  const changeToList = () => {
+    dispatch(changeLayout('LIST'));
+  };
+
+  const onChangeType = (event: any) => {
+    const { value } = event.target;
+
+    if (value !== '') {
+      dispatch(searchByType(value));
+    }
+
+    setSearchInput({ ...searchInput, type: value });
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchInput?.type]);
+
   return (
     <Container>
       <form onSubmit={(event: any) => onSubmitSearch(event)}>
@@ -42,7 +67,7 @@ const Form = () => {
             value={searchInput.search}
             onChange={(event: any) => onChangeInput(event)}
           />
-          <Select>
+          <Select name="type" onChange={(event: any) => onChangeType(event)}>
             <option value="">Filtrar por tipo...</option>
             {typesOption &&
               typesOption.map((type: any) => (
@@ -55,10 +80,10 @@ const Form = () => {
         <FormGroup>
           <ViewMode>
             <ViewModeTitle>Modo de Visualização</ViewModeTitle>
-            <ViewModeIcons>
+            <ViewModeIcons type="button" onClick={() => changeToGrid()}>
               <img src={Icons.Grid} alt="grid" />
             </ViewModeIcons>
-            <ViewModeIcons>
+            <ViewModeIcons type="button" onClick={() => changeToList()}>
               <img src={Icons.List} alt="lista" />
             </ViewModeIcons>
           </ViewMode>

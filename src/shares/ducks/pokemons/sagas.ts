@@ -6,6 +6,8 @@ import {
   loadFailure,
   searchSuccess,
   searchFailure,
+  searchByTypeSuccess,
+  searchByTypeFailure,
 } from './actions';
 
 export function* loadPokemons() {
@@ -24,5 +26,15 @@ export function* searchPokemon(payload: any) {
     yield put(searchSuccess(response.data));
   } catch (err) {
     yield put(searchFailure());
+  }
+}
+
+export function* searchByType(payload: any) {
+  try {
+    const { typeSearch } = payload.payload;
+    const response = yield call(api.get, `type/${typeSearch}`);
+    yield put(searchByTypeSuccess(response.data));
+  } catch (err) {
+    yield put(searchByTypeFailure());
   }
 }

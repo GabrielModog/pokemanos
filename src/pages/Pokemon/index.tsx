@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { searchRequest } from '../../shares/ducks/pokemons/actions';
@@ -18,26 +18,32 @@ import { feetToMeters, poundsToKilo } from '../../utils';
 
 const Pokemon = () => {
   const { pokeid } = useParams<any>();
+  const history = useHistory();
   const dispatch = useDispatch();
   const pokemon = useSelector((state: any) => state.pokemons.data);
+
+  const backToHome = () => {
+    history.push('/');
+  };
 
   useEffect(() => {
     dispatch(searchRequest(pokeid));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(pokemon);
-
   return (
     <Container>
       <Information>
         <div>
-          <Button type="button">VOLTAR</Button>
+          <Button type="button" onClick={backToHome}>
+            VOLTAR
+          </Button>
         </div>
         <PokeData>
           {pokemon.loading ? <Loading /> : ''}
           {pokemon.error ? 'Ocorreu um erro...' : ''}
-          {pokemon && (
+          {pokemon.length === 0 && <h1>Não foi possível encontrar...</h1>}
+          {pokemon.length !== 0 && (
             <>
               <h1>{pokemon[0]?.name.toUpperCase()}</h1>
               <div>

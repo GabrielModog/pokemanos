@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import fetchTypes from '../services/fetchTypes';
 
 function usePokeTypes() {
-  const [types, setTypes] = useState(null);
+  const [types, setTypes] = useState<any>(null);
 
   useEffect(() => {
     fetchTypes()

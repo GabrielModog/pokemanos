@@ -11,7 +11,7 @@ const Form = () => {
       <FormGroup>
         <Input type="text" placeholder="Buscar pokémon..." />
         <Select>
-          <option value="">Filtrar Tipo...</option>
+          <option value="">Filtrar por tipo...</option>
           {typesOption &&
             typesOption.map((type: any) => (
               <option key={type.name} value={type.name}>
@@ -20,8 +20,12 @@ const Form = () => {
             ))}
         </Select>
       </FormGroup>
-
-      <Button type="button">BUSCAR</Button>
+      <FormGroup>
+        <div>
+          <h1>Modo de Visualização</h1>
+        </div>
+        <Button type="button">BUSCAR</Button>
+      </FormGroup>
     </Container>
   );
 };

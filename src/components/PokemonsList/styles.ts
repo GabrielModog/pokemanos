@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 960px;
+  margin: 5px 0;
 `;
 
 export const Row = styled.div`

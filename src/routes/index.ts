@@ -3,7 +3,7 @@ import Pokemon from '../pages/Pokemon';
 
 const routes = [
   { path: '/', exact: true, component: Home },
-  { path: '/pokemon/:id', component: Pokemon },
+  { path: '/pokemon/:pokeid', component: Pokemon },
 ];
 
 export default routes;

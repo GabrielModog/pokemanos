@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   body{
     background-color: ${Danger[0]};
+    color: ${Danger[0]};
   }
 
   body, input, button, select, option, label {

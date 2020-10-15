@@ -6,6 +6,7 @@ import { loadRequest } from '../../shares/ducks/pokemons/actions';
 import PokemonsList from '../../components/PokemonsList';
 import Form from '../../components/Form';
 import { Container, Title } from './styles';
+import Pagination from '../../components/Pagination';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Home = () => {
     <Container>
       <Title>POKEMANOS</Title>
       <Form />
-      <PokemonsList data={pokemons.data.results} />{' '}
+      <PokemonsList data={pokemons.data.results} /> <Pagination />
     </Container>
   );
 };

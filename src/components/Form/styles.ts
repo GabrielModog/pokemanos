@@ -56,4 +56,14 @@ export const Button = styled.button`
   border: none;
   color: ${White[0]};
   font-weight: 500;
+  transition: 450ms;
+  outline: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
 `;

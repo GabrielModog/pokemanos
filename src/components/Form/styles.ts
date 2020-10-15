@@ -15,7 +15,37 @@ export const Container = styled.section`
 
 export const Input = styled.input`
   border: 1px solid ${Danger[0]};
-  color: ${Danger[200]};
+  color: ${Danger[100]};
+  height: 42px;
+  padding: 0 2rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  &::placeholder {
+    color: ${Danger[100]};
+  }
+  margin: 0 2px;
+`;
+
+export const Select = styled.select`
+  border: 1px solid ${Danger[0]};
+  color: ${Danger[100]};
+  height: 42px;
+  padding: 0 2rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  width: 50%;
+  margin: 0 2px;
+`;
+
+export const FormGroup = styled.div`
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 1rem;
 `;
 
 export const Button = styled.button`

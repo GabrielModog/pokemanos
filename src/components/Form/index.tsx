@@ -1,11 +1,19 @@
 import React from 'react';
 
-import { Button, Container } from './styles';
+import { Button, Container, FormGroup, Input, Select } from './styles';
 
 const Form = () => {
   return (
     <Container>
-      <h1>Formulário</h1>
+      <FormGroup>
+        <Input type="text" placeholder="Buscar pokémon..." />
+        <Select>
+          <option>1</option>
+          <option>1</option>
+          <option>1</option>
+        </Select>
+      </FormGroup>
+
       <Button type="button">BUSCAR</Button>
     </Container>
   );

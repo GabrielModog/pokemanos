@@ -4,7 +4,8 @@ import { PokemonsType } from './types';
 export const changeLayout = (layout: string) =>
   action(PokemonsType.CHANGE_LAYOUT, { layout });
 
-export const loadRequest = () => action(PokemonsType.LOAD_REQUEST);
+export const loadRequest = (pagination: any) =>
+  action(PokemonsType.LOAD_REQUEST, { pagination });
 
 export const loadSuccess = (data: any) =>
   action(PokemonsType.LOAD_SUCCESS, { data });

@@ -15,7 +15,7 @@ const Home = () => {
   const layout: any = useSelector((state: any) => state.pokemons.layout);
 
   useEffect(() => {
-    dispatch(loadRequest());
+    dispatch(loadRequest(0));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

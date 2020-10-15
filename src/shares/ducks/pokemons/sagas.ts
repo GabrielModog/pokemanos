@@ -10,9 +10,13 @@ import {
   searchByTypeFailure,
 } from './actions';
 
-export function* loadPokemons() {
+export function* loadPokemons(payload: any) {
   try {
-    const response = yield call(api.get, 'pokemon');
+    const { pagination } = payload.payload;
+    const response = yield call(
+      api.get,
+      `pokemon/?offset=${pagination}&limit=20`
+    );
     yield put(loadSuccess(response.data));
   } catch (err) {
     yield put(loadFailure());

@@ -11,6 +11,11 @@ Uma aplicação para pesquisar por Pokémons.
 - Instale as dependências: `yarn`
 - Agora só rodar o projeto com: `yarn start`
 
+## Formatar e verificação de código
+
+- Formatar ou embelezar: `yarn format`
+- Fazer verificação do código com lint: `yarn lint`
+
 ## Technologies
 
 - reactjs

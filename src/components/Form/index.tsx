@@ -1,7 +1,17 @@
 import React from 'react';
+import Icons from '../../assets';
 import usePokeTypes from '../../hooks/usePokeTypes';
 
-import { Button, Container, FormGroup, Input, Select } from './styles';
+import {
+  Button,
+  Container,
+  FormGroup,
+  Input,
+  Select,
+  ViewMode,
+  ViewModeIcons,
+  ViewModeTitle,
+} from './styles';
 
 const Form = () => {
   const typesOption = usePokeTypes();
@@ -21,9 +31,15 @@ const Form = () => {
         </Select>
       </FormGroup>
       <FormGroup>
-        <div>
-          <h1>Modo de Visualização</h1>
-        </div>
+        <ViewMode>
+          <ViewModeTitle>Modo de Visualização</ViewModeTitle>
+          <ViewModeIcons>
+            <img src={Icons.Grid} alt="grid" />
+          </ViewModeIcons>
+          <ViewModeIcons>
+            <img src={Icons.List} alt="lista" />
+          </ViewModeIcons>
+        </ViewMode>
         <Button type="button">BUSCAR</Button>
       </FormGroup>
     </Container>

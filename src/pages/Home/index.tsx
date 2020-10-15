@@ -21,7 +21,8 @@ const Home = () => {
     <Container>
       <Title>POKEMANOS</Title>
       <Form />
-      <PokemonsList data={pokemons.data.results} /> <Pagination />
+      <PokemonsList data={pokemons.data.results} viewMode="GRID" />
+      <Pagination />
     </Container>
   );
 };

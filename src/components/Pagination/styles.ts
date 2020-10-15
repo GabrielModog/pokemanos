@@ -18,6 +18,7 @@ export const Button = styled.button`
   font-weight: 500;
   transition: 450ms;
   outline: none;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.9;

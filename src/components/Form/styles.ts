@@ -44,6 +44,7 @@ export const FormGroup = styled.div`
   width: 600px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 5px 0;
   padding: 1rem;
 `;
@@ -58,6 +59,7 @@ export const Button = styled.button`
   font-weight: 500;
   transition: 450ms;
   outline: none;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.9;
@@ -65,5 +67,24 @@ export const Button = styled.button`
 
   &:active {
     opacity: 0.8;
+  }
+`;
+
+export const ViewMode = styled.div``;
+
+export const ViewModeTitle = styled.h1`
+  font-weight: 400;
+  font-size: 16px;
+`;
+
+export const ViewModeIcons = styled(Button)`
+  width: 32px;
+  background: transparent;
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.7;
   }
 `;

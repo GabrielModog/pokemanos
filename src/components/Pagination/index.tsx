@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { loadRequest } from '../../shares/ducks/pokemons/actions';
 import { Button, Container } from './styles';

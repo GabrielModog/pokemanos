@@ -7,7 +7,6 @@ import { Button, Container } from './styles';
 const Pagination: React.FC<any> = () => {
   const [pagination, setPagination] = useState<any>(0);
   const dispatch = useDispatch();
-  const pokemon = useSelector((state: any) => state.pokemon);
 
   const goToPrevious = () => {
     setPagination((prev: any) => {

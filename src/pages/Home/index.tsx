@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { loadRequest } from '../../shares/ducks/pokemons/actions';
 
-import PokemonsList from '../../components/PokemonsList';
+import PokemonsList from '../../components/Pokemons';
 import Form from '../../components/Form';
 import { Container, Title, Loading } from './styles';
 import Pagination from '../../components/Pagination';
@@ -21,13 +20,14 @@ const Home = () => {
 
   return (
     <Container>
-      <Link to="/">
-        <Title>POKEMANOS</Title>
-      </Link>
+      <Title>POKEMANOS</Title>
+
       <Form />
+
       {pokemons.loading && <Loading />}
       {pokemons.error && <Loading />}
       <PokemonsList data={pokemons.data.results} viewMode={layout} />
+
       <Pagination />
     </Container>
   );
